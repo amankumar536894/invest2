@@ -1,0 +1,76 @@
+.editplanpopup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.742);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+.editplanpopup-content{
+    width: 500px;
+    background-color: #eaeaea;
+    border-radius: 10px;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.editplanpopup-content-close{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: rgb(86, 86, 86);
+}
+.editplanpopup-inputfull{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.editplanpopup-inputfull-input{
+    width: 48%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(201, 201, 201);
+    font-size: 1.05rem;
+    color: rgb(86, 86, 86);
+}
+.editplanpopup-btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.editplanpopup-btns p{
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+}
+.editplanpopup-btns-cancel{
+    border: 1px solid rgb(86, 86, 86);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: rgb(86, 86, 86);
+}
+.editplanpopup-btns-update{
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+.editplanpopupactive{
+    display: flex;
+}

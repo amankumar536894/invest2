@@ -1,0 +1,113 @@
+.userdashboardbody{
+    width: 82%;
+    height: auto;
+    padding: 2rem 1.5rem;
+    background-color: rgb(47, 47, 47);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mainupperuserdata{
+    width: 100%;
+    background: linear-gradient(to right bottom, black, rgb(67, 67, 67));
+    border-radius: 10px;
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+.usernameheader{
+    font-size: 2rem;
+    color: white;
+}
+.usernameheaderunder{
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+}
+.somethingextra{
+    width: 100%;
+    margin-top: 2rem;
+}
+.somethingextratitle{
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+}
+.somethingextraall{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.somethingextraper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    border: 1px solid gray;
+    padding: 2rem 2.5rem;
+    border-radius: 30px;
+    background-color: rgb(21, 21, 21);
+}
+.someextrapericon{
+    color: white;
+}
+.someextrapertitle{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.someextraperdesc{
+    color: rgb(110, 110, 110);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    gap: 1rem;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.retry-btn {
+    background: #4f8cff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.retry-btn:hover {
+    background: #2563eb;
+}

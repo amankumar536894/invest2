@@ -1,0 +1,78 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.overallleft{
+  width: 82%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  overflow-y: scroll;
+  color: white;
+}
+
+.topbox{
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.topboxleft{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.topboxlefttitle{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+.topboxleftdesc{
+  font-size: 1rem;
+  font-weight: 400;
+  color: #979797;
+}
+.topboxright{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.searchbarinvestor{
+  width: 100%;
+  border: 0.5px solid gray;
+  border-radius: 10px;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.searchinputlogo{
+  color: rgb(78, 78, 78);
+}
+.searchbarinvestor input{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  font-size: 1.1rem;
+}

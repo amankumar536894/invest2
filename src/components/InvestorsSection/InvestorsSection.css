@@ -1,0 +1,500 @@
+.investorpagefour{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.investorpagefourper{
+    background-color: #4C4C4C;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding:2rem 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+.investorpagefourpertitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.investorpagefourperdesc{
+    font-size: 0.9rem;
+    color: rgb(196, 196, 196);
+}
+.investorstatsicon{
+    background-color: rgb(255, 255, 255);
+    color: gray;
+    width: 2.5rem;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+.investorsdetailssection{
+    width: 100%;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    overflow: scroll;
+}
+.investordetailsperrow{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.investorname{
+    width: 13%;
+    padding: 1rem;
+}
+.investorcontact{
+    width: 10%;
+    padding: 1rem 0;
+}
+.investorjoindate{
+    width: 8%;
+    padding: 1rem 0;
+}
+.totalinvested{
+    width: 10%;
+    padding: 1rem 0;
+}
+.totalrevenue{
+    width: 10%;
+    padding: 1rem 0;
+}
+.yearlyplan{
+    width: 10%;
+    padding: 1rem 0;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.yearlyplan.forbgandbold {
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: rgb(47, 47, 47) !important;
+    color: white;
+}
+.investorstatus{
+    width: 8%;
+    padding: 1rem 0;
+    text-transform: capitalize;
+    font-weight: 500;
+    background: none !important;
+}
+
+.investorstatus.forbgandbold {
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: rgb(47, 47, 47) !important;
+    color: white;
+}
+.investorstatus.active {
+    color: #4CAF50 !important;
+    font-weight: 600;
+    background: none !important;
+}
+.investorstatus.inactive {
+    color: #f44336 !important;
+    font-weight: 600;
+    background: none !important;
+}
+.actionbtn{
+    width: 9%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.actionbtn:hover {
+    color: #4CAF50;
+}
+.forbgandbold{
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: rgb(47, 47, 47);
+}
+.profileselect{
+    width: 6%;
+    padding: 1rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileselect:hover {
+    color: #4CAF50;
+    transform: scale(1.1);
+}
+.addformpopup{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.711);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.inneraddformppup{
+    width: 40%;
+    background-color: rgb(208, 208, 208);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 5px;
+    position: relative;
+}
+.addformpopline{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+.addforminputper{
+    width: 50%;
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    color: rgb(89, 89, 89);
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+.addforminputper::placeholder{
+    color: rgb(89, 89, 89);
+}
+.investnowbtn{
+    width: 100%;
+    padding: 0.6rem;
+    text-align: center;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.investnowbtn:hover {
+    background-color: #333;
+}
+.cutaddform{
+    color: black;
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    cursor: pointer;
+}
+.addformpopupactive{
+    display: flex;
+}
+
+/* Loading styles */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    color: white;
+    gap: 1rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #333;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* No investors styles */
+.no-investors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    color: #979797;
+    font-style: italic;
+    border: 1px dashed #333;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 1rem;
+}
+
+.no-investors p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Error message styles */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+    border: 1px solid #f44336;
+    box-shadow: 0 2px 4px rgba(244, 67, 54, 0.2);
+}
+
+.error-message p {
+    margin: 0;
+    flex: 1;
+    font-weight: 500;
+}
+
+.error-close {
+    background: none;
+    border: none;
+    color: #c62828;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.error-close:hover {
+    color: #b71c1c;
+}
+
+/* Success message styles */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.success-message p {
+    margin: 0;
+    flex: 1;
+    font-weight: 500;
+}
+
+.success-close {
+    background: none;
+    border: none;
+    color: #155724;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.success-close:hover {
+    color: #0f5132;
+}
+
+/* Credit amount column styles */
+.creditamount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    width: 10%;
+}
+
+.creditamount.forbgandbold {
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: rgb(47, 47, 47);
+    color: white;
+}
+
+.creditamount input {
+    width: 90%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: white;
+    max-width: 100px;
+}
+
+.creditamount input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Credit popup styles */
+.creditpopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.creditpopup-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.creditpopup-inner {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.creditpopup-cross {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.creditpopup-cross:hover {
+    color: #333;
+}
+
+.creditpopup h3 {
+    margin: 0 0 1.5rem 0;
+    color: #333;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.creditpopup-content {
+    margin-bottom: 2rem;
+}
+
+.creditpopup-input-group {
+    margin-bottom: 1.5rem;
+}
+
+.creditpopup-input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.creditpopup-input-group input,
+.creditpopup-input-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.creditpopup-input-group input:focus,
+.creditpopup-input-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.creditpopup-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.creditpopup-cancel,
+.creditpopup-confirm {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.creditpopup-cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+.creditpopup-cancel:hover {
+    background-color: #5a6268;
+}
+
+.creditpopup-confirm {
+    background-color: #28a745;
+    color: white;
+}
+
+.creditpopup-confirm:hover {
+    background-color: #218838;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .investorpagefour {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .investorpagefour {
+        grid-template-columns: 1fr;
+    }
+    
+    .inneraddformppup {
+        width: 90%;
+        padding: 1.5rem;
+    }
+    
+    .addformpopline {
+        flex-direction: column;
+    }
+    
+    .addforminputper {
+        width: 100%;
+    }
+}

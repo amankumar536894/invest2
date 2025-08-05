@@ -1,0 +1,194 @@
+.fourall{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.eachfour{
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding:2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.eachfourleft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.eachfourlefttitle{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+.eachfourleftnum{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+.eachfourright{
+    color: white;
+    background-color: gray;
+    width: 2.5rem;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 12px;
+
+}
+.twobigdash{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    background: linear-gradient(to right bottom, black, #262629);
+}
+.eachtwobig{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.eachtwobigmain-title{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+.eachtwobigmain-title p{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+.eachtwobigmain-table{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.eachtwomaintable{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.eachtwomaintable{
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom, #151517, #262629);
+}
+.eachtwomaintable-left{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.eachtwomaintable-left-name{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+.eachtwomaintable-left-date{
+    font-size: 0.8rem;
+    color: #979797;
+}
+.eachtwomaintable-right{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.eachtwomaintable-right-amount{
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+.eachtwomaintable-right-plan{
+    font-size: 0.8rem;
+    color: #979797;
+}
+.allinvestment{
+    width: 100%;
+    padding: 0.5rem ;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border: 0.4px solid gray;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.allinvestment:hover {
+    background-color: #333;
+    transform: translateY(-1px);
+}
+
+/* Loading styles */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    color: white;
+    gap: 1rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #333;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* No data styles */
+.no-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #979797;
+    font-style: italic;
+    border: 1px dashed #333;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.no-data p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .fourall {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .fourall {
+        grid-template-columns: 1fr;
+    }
+    
+    .twobigdash {
+        flex-direction: column;
+    }
+    
+    .eachtwobig {
+        width: 100%;
+    }
+}

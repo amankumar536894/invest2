@@ -1,0 +1,18 @@
+.userplansection{
+    width: 83%;
+    height: 100%;
+    padding: 2rem 2.5rem;
+    background-color: black;
+    color: white;
+}
+.investplanusersectitle{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+.planuserallbox{
+    width: 100%;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

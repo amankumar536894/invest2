@@ -1,0 +1,64 @@
+.deleteplanpopup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.595);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.deleteplanpopup-content{
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.deleteplanpopup-content-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: rgb(79, 79, 79);
+    text-align: center;
+}
+.deleteplanpopup-content-buttons{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 4rem;
+}
+.deleteplanpopup-content-buttons button{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.deleteplanpopup-content-buttons-cancel{
+    background-color: white;
+    color: rgb(40, 40, 40);
+    border: 2px solid rgb(40, 40, 40);
+}
+.deleteplanpopup-content-buttons-delete{
+    background-color: rgb(100, 2, 2);
+    color: #fff;
+    border: none;
+}
+.deleteplanpopup-content-close{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: rgb(86, 86, 86);
+}

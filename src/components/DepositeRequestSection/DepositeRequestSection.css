@@ -1,0 +1,60 @@
+.requestperactions {
+    width: 200px;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.approve-btn, .reject-btn {
+    padding: 0.4rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.approve-btn {
+    background: #4f8cff;
+    color: #fff;
+}
+.approve-btn:disabled {
+    background: #b3d4fc;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.reject-btn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+.reject-btn:disabled {
+    background: #fca5a5;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.status-pending {
+    color: #b45309;
+    font-weight: 600;
+}
+.status-approved {
+    color: #16a34a;
+    font-weight: 600;
+}
+.status-rejected {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.error-message {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid #fecaca;
+}

@@ -32,7 +32,7 @@
 
 .form-group label {
     font-size: 1rem;
-    color: #555;
+    color: #2e2e2e;
 }
 
 .form-group input {
@@ -42,10 +42,6 @@
     font-size: 1rem;
     outline: none;
     transition: border 0.2s;
-}
-
-.form-group input:focus {
-    border-color: #4f8cff;
 }
 
 .password-group {

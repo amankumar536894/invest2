@@ -5,6 +5,8 @@ import "./UserRegisterSection.css";
 const UserRegisterSection = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    name: "",
+    email: "",
     phoneNumber: "",
     password: "",
     confirmPassword: ""
@@ -54,7 +56,9 @@ const UserRegisterSection = () => {
         },
         body: JSON.stringify({
           phoneNumber: formData.phoneNumber,
-          password: formData.password
+          password: formData.password,
+          name: formData.name,
+          email: formData.email
         })
       });
 
@@ -89,6 +93,32 @@ const UserRegisterSection = () => {
         <h2>User Registration</h2>
         
         {error && <div className="error-message">{error}</div>}
+        
+        <div className="form-group">
+          <label htmlFor="nameid">Name</label>
+          <input
+            type="tel"
+            id="nameid"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="emailid">Email</label>
+          <input
+            type="email"
+            id="emailid"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            placeholder="Enter your email"
+            required
+          />
+        </div>
         
         <div className="form-group">
           <label htmlFor="phoneNumber">Mobile Number</label>

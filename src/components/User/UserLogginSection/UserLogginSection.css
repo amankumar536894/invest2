@@ -77,9 +77,6 @@
     transition: border 0.2s;
 }
 
-.form-group input:focus {
-    border-color: #4f8cff;
-}
 
 .login-btn {
     padding: 0.7rem 0;

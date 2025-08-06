@@ -7,14 +7,13 @@
     justify-content: flex-start;
     padding: 2.5rem 2vw 2.5rem 2vw;
     box-sizing: border-box;
-    background: #181a20;
+    background-color: #5E936C;
 }
 
 .deposit-form {
-    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    background: linear-gradient(135deg, #3E5F44 0%, #648e6b 100%);
     padding: 2rem 1.5rem;
     border-radius: 12px;
-    border: 1px solid #333;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
     width: 100%;
     display: flex;
@@ -48,23 +47,17 @@
 
 .form-group label {
     font-size: 1rem;
-    color: #e0e0e0;
+    color: white;
 }
 
 .form-group input {
     padding: 0.6rem 0.8rem;
     border: 1px solid #444;
-    background: #232526;
-    color: #fff;
+    color: gray;
     border-radius: 6px;
     font-size: 1rem;
     outline: none;
     transition: border 0.2s, background 0.2s;
-}
-
-.form-group input:focus {
-    border-color: #4f8cff;
-    background: #181a20;
 }
 
 .deposit-btn {
@@ -106,7 +99,7 @@
 }
 
 .deposit-history-section {
-    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    background: linear-gradient(135deg, #3E5F44 0%, #648e6b 100%);
     padding: 1.5rem 1rem;
     border-radius: 12px;
     border: 1px solid #333;

@@ -1,5 +1,5 @@
 .formorestyle{
-    background-color: gray;
+    background-color: #3E5F44;
     padding: 0.5rem 1rem;
     border-radius: 10px;
     cursor: pointer;
@@ -7,7 +7,7 @@
 }
 
 .formorestyle:hover {
-    background-color: #666;
+    background-color: #3E5F44;
 }
 
 .withdrawlsecinput{

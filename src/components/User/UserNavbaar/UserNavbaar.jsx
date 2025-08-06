@@ -10,8 +10,10 @@ import {
   ChartPie,
   Settings,
   LogOut,
+  Menu
 } from "lucide-react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo from '../../../assets/logo.png'
 
 const UserNavbaar = () => {
   const navigate = useNavigate();
@@ -62,7 +64,10 @@ const UserNavbaar = () => {
   return (
     <>
       <div className="navbaar">
-        <p className="logo">{userInfo.phoneNumber}</p>
+        <div className="logobox">
+          <img src={logo} className="logo"/>
+          <Menu className="burgericon" />
+        </div>
         <NavLink to="/" className="navbaar-item">
           <LayoutDashboard />
           <p>Home</p>

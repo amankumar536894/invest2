@@ -1,17 +1,14 @@
 .navbaar{
     width: 18%;
     height: 100vh;
-    background: linear-gradient(to right bottom, black, rgb(41, 41, 41));
+    background: linear-gradient(to right bottom, #3E5F44, #3E5F44);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
 }
 .logo{
-    font-size: 2rem;
-    font-weight: 600;
-    color: #fff;
-    text-align: center;
+    width: 8rem;
     margin-block: 2rem;
 }
 .navbaar-item{

@@ -94,9 +94,9 @@ const UserDashboardSection = () => {
     <>
       <div className="userdashboardbody">
         <div className="mainupperuserdata">
-          <p className="usernameheader">Hi {dashboardData.investor.phoneNumber}</p>
+          <p className="usernameheader">Hi {dashboardData.investor.name}</p>
           <p className="usernameheaderunder">
-            Grow your money 2x with PixalByte
+            Grow your money with Trust Market
           </p>
         </div>
 

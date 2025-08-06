@@ -2,13 +2,15 @@
     width: 83%;
     height: 100%;
     padding: 2rem 2.5rem;
-    background-color: black;
+    background-color: #93DA97;
     color: white;
 }
 .investplanusersectitle{
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     padding: 0.5rem 0;
+    margin-bottom: 1rem;
+
 }
 .planuserallbox{
     width: 100%;

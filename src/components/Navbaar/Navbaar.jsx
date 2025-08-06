@@ -2,6 +2,7 @@ import React from 'react'
 import './Navbaar.css'
 import { LayoutDashboard, TrendingUp, Users, Wallet, CreditCard, ChartPie, Settings, LogOut } from 'lucide-react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import logo from '../../assets/logo.png'
 
 const Navbaar = () => {
    const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Navbaar = () => {
    return (
       <>
          <div className="navbaar">
-            <p className='logo'>ADMIN</p>
+            <img src={logo} className="logo"/>
             <NavLink to='/admin' className='navbaar-item'>
                <LayoutDashboard />
                <p>Dashboard</p>
@@ -25,6 +26,14 @@ const Navbaar = () => {
             <NavLink to='/admin/investment-plans' className='navbaar-item'>
                <TrendingUp />
                <p>Investment Plans</p>
+            </NavLink>
+            <NavLink to='/admin/deposite-request' className='navbaar-item'>
+               <Users />
+               <p>Deposite Request</p>
+            </NavLink>
+            <NavLink to='/admin/withdrawal-request' className='navbaar-item'>
+               <CreditCard />
+               <p>Withdrawl Request</p>
             </NavLink>
             <NavLink to='/admin/investors' className='navbaar-item'>
                <Users />

@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #5E936C;
 }
 .eachfourleft{
     display: flex;
@@ -31,7 +32,7 @@
 }
 .eachfourright{
     color: white;
-    background-color: gray;
+    background-color: #93DA97;
     width: 2.5rem;
     height: auto;
     padding: 0.5rem;
@@ -43,7 +44,6 @@
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
-    background: linear-gradient(to right bottom, black, #262629);
 }
 .eachtwobig{
     width: 50%;
@@ -53,6 +53,7 @@
     padding: 2rem;
     border: 1px solid gray;
     border-radius: 10px;
+    background: linear-gradient(135deg, #3E5F44 0%, #648e6b 100%);
 }
 .eachtwobigmain-title{
     display: flex;
@@ -116,7 +117,7 @@
     padding: 0.5rem ;
     text-align: center;
     color: white;
-    background-color: black;
+    background-color: #93DA97;
     border: 0.4px solid gray;
     border-radius: 10px;
     font-weight: 600;
@@ -125,7 +126,7 @@
 }
 
 .allinvestment:hover {
-    background-color: #333;
+    background-color: #93DA97;
     transform: translateY(-1px);
 }
 
@@ -160,11 +161,11 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    color: #979797;
+    color: white;
     font-style: italic;
     border: 1px dashed #333;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
+    
 }
 
 .no-data p {

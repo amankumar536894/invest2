@@ -7,7 +7,7 @@
     justify-content: flex-start;
     padding: 2.5rem 2vw 2.5rem 2vw;
     box-sizing: border-box;
-    background-color: #222;
+    background-color: #5E936C;
 }
 
 .deposit-form {
@@ -57,10 +57,6 @@
     font-size: 1rem;
     outline: none;
     transition: border 0.2s;
-}
-
-.form-group input:focus {
-    border-color: #4f8cff;
 }
 
 .deposit-btn {

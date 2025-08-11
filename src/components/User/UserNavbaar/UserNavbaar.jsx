@@ -10,7 +10,8 @@ import {
   ChartPie,
   Settings,
   LogOut,
-  Menu
+  Menu,
+  Building2
 } from "lucide-react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from '../../../assets/logo.png'
@@ -83,6 +84,10 @@ const UserNavbaar = () => {
         <NavLink to="/user-withdraw" className="navbaar-item">
           <CreditCard />
           <p>Withdraw</p>
+        </NavLink>
+        <NavLink to="/user-bank-details" className="navbaar-item">
+          <Building2 />
+          <p>Bank Details</p>
         </NavLink>
         <button onClick={handleLogout} className="navbaar-item logout-btn">
           <LogOut />

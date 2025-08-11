@@ -1,0 +1,13 @@
+.userbankdetails {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #93DA97;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .userbankdetails {
+    flex-direction: column;
+  }
+}

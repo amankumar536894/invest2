@@ -17,6 +17,7 @@ import UserDashboard from "./pages/User/UserDashboard/UserDashboard";
 import UserPlan from "./pages/User/UserPlan/UserPlan";
 import UserDeposit from "./pages/User/UserDeposit/UserDeposit";
 import UserWithdraw from "./pages/User/UserWithdraw/UserWithdraw";
+import UserBankDetails from "./pages/User/UserBankDetails/UserBankDetails";
 import DepopsiteRequests from "./pages/DepopsiteRequests/DepopsiteRequests";
 import WithdrawlRequests from "./pages/WithdrawlRequests/WithdrawlRequests";
 
@@ -102,6 +103,10 @@ const router = createBrowserRouter([
   {
     path: "/user-withdraw",
     element: <UserWithdraw />,
+  },
+  {
+    path: "/user-bank-details",
+    element: <UserBankDetails />,
   },
 ]);
 

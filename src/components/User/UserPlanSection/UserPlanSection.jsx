@@ -291,7 +291,7 @@ const UserPlanSection = () => {
       </div>
 
       {/* Save Selection Button */}
-      {plans.length > 0 && (
+      {plans.length > 0 && selectedPlans.length > 0 && (
         <div className="save-selection-section">
           <p className="selection-info">
             {selectedPlans.length} plan{selectedPlans.length !== 1 ? 's' : ''} selected
@@ -299,7 +299,7 @@ const UserPlanSection = () => {
           <button 
             className="save-selection-btn" 
             onClick={handleSaveSelection}
-            disabled={isSubmitting || selectedPlans.length === 0}
+            disabled={isSubmitting}
           >
             <Save />
             {isSubmitting ? "Saving..." : "Save Selection"}

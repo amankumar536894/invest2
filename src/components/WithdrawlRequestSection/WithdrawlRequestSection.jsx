@@ -56,7 +56,8 @@ const WithdrawlRequestSection = () => {
       });
       const data = await res.json();
       if (res.ok) {
-        setWithdrawals((prev) => prev.filter((w) => w._id !== id));
+        // Refresh the list to show updated status instead of removing
+        fetchWithdrawals();
       } else {
         setError(data.message || `Failed to ${action} withdrawal`);
       }
@@ -71,8 +72,8 @@ const WithdrawlRequestSection = () => {
     <div className="depositerequestsection">
       <div className="topbox">
         <div className="topboxleft">
-          <p className="topboxlefttitle">Withdrawl Requests</p>
-          <p className="topboxleftdesc">Manage investor Withdrawls requests</p>
+          <p className="topboxlefttitle">All Withdrawal Requests</p>
+          <p className="topboxleftdesc">View all investor withdrawal requests</p>
         </div>
       </div>
       <div className="depositerequestcomeall">
@@ -87,7 +88,7 @@ const WithdrawlRequestSection = () => {
         ) : error ? (
           <div className="depositerequestper"><div className="error-message">{error}</div></div>
         ) : withdrawals.length === 0 ? (
-          <div className="depositerequestper"><div>No withdrawal requests.</div></div>
+          <div className="depositerequestper"><div>No withdrawal requests found.</div></div>
         ) : (
           withdrawals.map((w) => (
             <div className="depositerequestper" key={w._id}>
@@ -95,7 +96,7 @@ const WithdrawlRequestSection = () => {
               <div className="requestperamount">₹{w.amount}</div>
               <div className={`requestperstatus status-${w.status}`}>{w.status}</div>
               <div className="requestperactions">
-                {w.status === "pending" && (
+                {w.status === "pending" ? (
                   <>
                     <button
                       className="approve-btn"
@@ -112,6 +113,12 @@ const WithdrawlRequestSection = () => {
                       {actionLoading === w._id + "reject" ? "Rejecting..." : "Reject"}
                     </button>
                   </>
+                ) : (
+                  <span className={`status-badge ${w.status.toLowerCase()}`}>
+                    {w.status === "approved" ? "✓ Approved" : 
+                     w.status === "rejected" ? "✗ Rejected" : 
+                     w.status}
+                  </span>
                 )}
               </div>
             </div>

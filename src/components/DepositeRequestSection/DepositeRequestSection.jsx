@@ -17,7 +17,7 @@ const DepositeRequestSection = () => {
         setIsLoading(false);
         return;
       }
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/api/deposits/pending`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"}/api/deposits`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -74,8 +74,8 @@ const DepositeRequestSection = () => {
     <div className="depositerequestsection">
       <div className="topbox">
         <div className="topboxleft">
-          <p className="topboxlefttitle">Deposite Requests</p>
-          <p className="topboxleftdesc">Manage investor Deposite requests</p>
+          <p className="topboxlefttitle">All Deposits</p>
+          <p className="topboxleftdesc">View all investor deposits</p>
         </div>
       </div>
       <div className="depositerequestcomeall">
@@ -90,7 +90,7 @@ const DepositeRequestSection = () => {
         ) : error ? (
           <div className="depositerequestper"><div className="error-message">{error}</div></div>
         ) : deposits.length === 0 ? (
-          <div className="depositerequestper"><div>No pending deposit requests.</div></div>
+          <div className="depositerequestper"><div>No deposits found.</div></div>
         ) : (
           deposits.map((dep) => (
             <div className="depositerequestper" key={dep._id}>
@@ -98,20 +98,30 @@ const DepositeRequestSection = () => {
               <div className="requestperamount">₹{dep.amount}</div>
               <div className={`requestperstatus status-${dep.status}`}>{dep.status}</div>
               <div className="requestperactions">
-                <button
-                  className="approve-btn"
-                  disabled={actionLoading === dep._id + "approve"}
-                  onClick={() => handleAction(dep._id, "approve")}
-                >
-                  {actionLoading === dep._id + "approve" ? "Approving..." : "Approve"}
-                </button>
-                <button
-                  className="reject-btn"
-                  disabled={actionLoading === dep._id + "reject"}
-                  onClick={() => handleAction(dep._id, "reject")}
-                >
-                  {actionLoading === dep._id + "reject" ? "Rejecting..." : "Reject"}
-                </button>
+                {dep.status === "pending" ? (
+                  <>
+                    <button
+                      className="approve-btn"
+                      disabled={actionLoading === dep._id + "approve"}
+                      onClick={() => handleAction(dep._id, "approve")}
+                    >
+                      {actionLoading === dep._id + "approve" ? "Approving..." : "Approve"}
+                    </button>
+                    <button
+                      className="reject-btn"
+                      disabled={actionLoading === dep._id + "reject"}
+                      onClick={() => handleAction(dep._id, "reject")}
+                    >
+                      {actionLoading === dep._id + "reject" ? "Rejecting..." : "Reject"}
+                    </button>
+                  </>
+                ) : (
+                  <span className={`status-badge ${dep.status.toLowerCase()}`}>
+                    {dep.status === "approved" ? "✓ Approved" : 
+                     dep.status === "rejected" ? "✗ Rejected" : 
+                     dep.status}
+                  </span>
+                )}
               </div>
             </div>
           ))

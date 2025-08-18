@@ -16,6 +16,7 @@ const Dash = () => {
     totalInvestment: 0,
     activeUsers: 0,
     pendingWithdrawals: 0,
+    totalPendingWithdrawals: 0,
     monthlyROI: 0,
   });
   const [recentInvestments, setRecentInvestments] = useState([]);
@@ -32,7 +33,7 @@ const Dash = () => {
 
         // Fetch dashboard stats
         const statsResponse = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}api/dashboard/stats`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/dashboard/stats`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -44,10 +45,11 @@ const Dash = () => {
         if (statsResponse.ok) {
           const statsData = await statsResponse.json();
           setStats({
-            totalInvestment: statsData.data.totalInvestment || 0,
-            activeUsers: statsData.data.activeUsers || 0,
-            pendingWithdrawals: statsData.data.pendingWithdrawals || 0,
-            monthlyROI: statsData.data.monthlyROI || 0,
+            totalInvestment: Number(statsData.data.totalInvestment) || 0,
+            activeUsers: Number(statsData.data.activeUsers) || 0,
+            pendingWithdrawals: Number(statsData.data.pendingWithdrawals) || 0,
+            totalPendingWithdrawals: Number(statsData.data.totalPendingWithdrawals) || 0,
+            monthlyROI: Number(statsData.data.monthlyROI) || 0,
           });
         }
 
@@ -137,23 +139,23 @@ const Dash = () => {
                 {formatCurrency(stats.totalInvestment)}
               </p>
             </div>
-            <Users className="eachfourright" />
+            <BadgeIndianRupee className="eachfourright" />
           </div>
           <div className="eachfour">
             <div className="eachfourleft">
               <p className="eachfourlefttitle">Active Users</p>
-              <p className="eachfourleftnum">{stats.activeUsers}</p>
+              <p className="eachfourleftnum">     {stats.activeUsers}</p>
             </div>
-            <Hourglass className="eachfourright" />
+            <Users className="eachfourright" />
           </div>
           <div className="eachfour">
             <div className="eachfourleft">
               <p className="eachfourlefttitle">Pending Withdrawals</p>
               <p className="eachfourleftnum">
-                {formatCurrency(stats.pendingWithdrawals)}
+                {formatCurrency(stats.totalPendingWithdrawals)}
               </p>
             </div>
-            <TrendingUp className="eachfourright" />
+            <Hourglass className="eachfourright" />
           </div>
           <div className="eachfour">
             <div className="eachfourleft">

@@ -63,6 +63,8 @@
   color: #333;
   font-size: 14px;
   font-weight: 500;
+  color: #000000; /* Ensure black text when focused */
+  -webkit-text-fill-color: #000000; /* For WebKit browsers */
 }
 
 .form-group input {

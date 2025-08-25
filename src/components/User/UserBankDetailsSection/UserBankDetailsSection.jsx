@@ -5,9 +5,6 @@ import { Save, CreditCard, TrendingUp, CheckCircle } from "lucide-react";
 function UserBankDetailsSection() {
   const [formData, setFormData] = useState({
     accountHolderName: "",
-    accountNumber: "",
-    bankName: "",
-    ifscCode: "",
     investmentPlans: []
   });
   const [availablePlans, setAvailablePlans] = useState([]);
@@ -53,9 +50,6 @@ function UserBankDetailsSection() {
           setCurrentBankDetails(investor.bankDetails);
           setFormData({
             accountHolderName: investor.bankDetails?.accountHolderName || "",
-            accountNumber: investor.bankDetails?.accountNumber || "",
-            bankName: investor.bankDetails?.bankName || "",
-            ifscCode: investor.bankDetails?.ifscCode || "",
             investmentPlans: investor.investmentPlans ? investor.investmentPlans.map(plan => plan._id) : []
           });
         }
@@ -124,9 +118,8 @@ function UserBankDetailsSection() {
   const handlePlanSelection = (planId) => {
     setFormData(prev => ({
       ...prev,
-      investmentPlans: prev.investmentPlans.includes(planId)
-        ? prev.investmentPlans.filter(id => id !== planId)
-        : [...prev.investmentPlans, planId]
+      // allow selecting only one plan at a time (toggle behavior)
+      investmentPlans: prev.investmentPlans.includes(planId) ? [] : [planId]
     }));
   };
 
@@ -137,15 +130,14 @@ function UserBankDetailsSection() {
     setIsSubmitting(true);
 
     // Basic validation
-    if (!formData.accountNumber || !formData.ifscCode || 
-        !formData.bankName || !formData.accountHolderName) {
-      setError("All bank details are required");
+    if (!formData.accountHolderName) {
+      setError("Wallet address is required");
       setIsSubmitting(false);
       return;
     }
 
-    if (formData.investmentPlans.length === 0) {
-      setError("Please select at least one investment plan");
+    if (formData.investmentPlans.length !== 1) {
+      setError("Please select exactly one investment plan");
       setIsSubmitting(false);
       return;
     }
@@ -168,9 +160,6 @@ function UserBankDetailsSection() {
       // Prepare the request body according to the required format
       const requestBody = {
         bankDetails: {
-          accountNumber: formData.accountNumber,
-          ifscCode: formData.ifscCode,
-          bankName: formData.bankName,
           accountHolderName: formData.accountHolderName
         },
         investmentPlans: formData.investmentPlans
@@ -210,9 +199,6 @@ function UserBankDetailsSection() {
           setFormData(prev => ({
             ...prev,
             accountHolderName: data.data.bankDetails?.accountHolderName || prev.accountHolderName,
-            accountNumber: data.data.bankDetails?.accountNumber || prev.accountNumber,
-            bankName: data.data.bankDetails?.bankName || prev.bankName,
-            ifscCode: data.data.bankDetails?.ifscCode || prev.ifscCode,
             investmentPlans: data.data.investmentPlans?.map(plan => plan._id) || prev.investmentPlans
           }));
         }
@@ -268,23 +254,11 @@ function UserBankDetailsSection() {
             
             {currentBankDetails && (
               <div className="current-bank-details">
-                <h4><CreditCard /> Current Bank Details</h4>
+                <h4><CreditCard />  Wallet Address</h4>
                 <div className="details-grid">
                   <div className="detail-item">
-                    <span className="detail-label">Account Holder:</span>
+                    <span className="detail-label"> Wallet Address</span>
                     <span className="detail-value">{currentBankDetails.accountHolderName}</span>
-                  </div>
-                  <div className="detail-item">
-                    <span className="detail-label">Account Number:</span>
-                    <span className="detail-value">{currentBankDetails.accountNumber}</span>
-                  </div>
-                  <div className="detail-item">
-                    <span className="detail-label">Bank Name:</span>
-                    <span className="detail-value">{currentBankDetails.bankName}</span>
-                  </div>
-                  <div className="detail-item">
-                    <span className="detail-label">IFSC Code:</span>
-                    <span className="detail-value">{currentBankDetails.ifscCode}</span>
                   </div>
                 </div>
               </div>
@@ -313,56 +287,21 @@ function UserBankDetailsSection() {
         {/* Update Form */}
         <form onSubmit={handleSubmit} className="bank-details-form">
           <div className="form-section">
-            <h3><CreditCard /> Bank Details</h3>
+            <h3><CreditCard /> Wallet Address</h3>
             <div className="form-grid">
               <div className="form-group">
-                <label htmlFor="bank_accountHolderName">Account Holder Name *</label>
+                <label htmlFor="bank_accountHolderName">Wallet Address</label>
                 <input
                   type="text"
                   id="bank_accountHolderName"
                   name="bank_accountHolderName"
                   value={formData.accountHolderName}
                   onChange={handleInputChange}
-                  placeholder="Enter account holder name"
+                  placeholder="Enter wallet address"
                   required
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="bank_accountNumber">Account Number *</label>
-                <input
-                  type="text"
-                  id="bank_accountNumber"
-                  name="bank_accountNumber"
-                  value={formData.accountNumber}
-                  onChange={handleInputChange}
-                  placeholder="Enter account number"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="bank_bankName">Bank Name *</label>
-                <input
-                  type="text"
-                  id="bank_bankName"
-                  name="bank_bankName"
-                  value={formData.bankName}
-                  onChange={handleInputChange}
-                  placeholder="Enter bank name"
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="bank_ifscCode">IFSC Code *</label>
-                <input
-                  type="text"
-                  id="bank_ifscCode"
-                  name="bank_ifscCode"
-                  value={formData.ifscCode}
-                  onChange={handleInputChange}
-                  placeholder="Enter IFSC code"
-                  required
-                />
-              </div>
+              
             </div>
           </div>
 
